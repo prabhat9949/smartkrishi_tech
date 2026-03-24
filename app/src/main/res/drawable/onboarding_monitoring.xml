@@ -1,0 +1,134 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="300dp"
+    android:viewportWidth="300"
+    android:viewportHeight="300">
+
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M150,30 C177.614,30 205.228,45.858 220,71.716 C234.772,97.574 234.772,130.426 220,156.284 C205.228,182.142 177.614,198 150,198 C122.386,198 94.772,182.142 80,156.284 C65.228,130.426 65.228,97.574 80,71.716 C94.772,45.858 122.386,30 150,30 Z"/>
+
+    <!-- Tablet Device -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#1976D2"
+        android:strokeWidth="3"
+        android:pathData="M90,110 L90,200 A8,8 0,0,0 98,208 L202,208 A8,8 0,0,0 210,200 L210,110 A8,8 0,0,0 202,102 L98,102 A8,8 0,0,0 90,110 Z"/>
+
+    <!-- Tablet Screen with Dashboard -->
+    <path
+        android:fillColor="#E8F5E9"
+        android:pathData="M98,112 L98,196 L202,196 L202,112 Z"/>
+
+    <!-- Dashboard Widgets on Screen -->
+    <!-- Weather Widget -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1.5"
+        android:pathData="M108,120 L158,120 L158,150 L108,150 Z"/>
+
+    <!-- Sun Icon in Weather Widget -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M133,130 C137.418,130 141,133.582 141,138 C141,142.418 137.418,146 133,146 C128.582,146 125,142.418 125,138 C125,133.582 128.582,130 133,130 Z"/>
+
+    <!-- Soil Moisture Widget -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1.5"
+        android:pathData="M166,120 L192,120 L192,150 L166,150 Z"/>
+
+    <!-- Droplet in Moisture Widget -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M179,128 Q184,133 184,138 C184,142 181,145 179,145 C177,145 174,142 174,138 Q174,133 179,128 Z"/>
+
+    <!-- Graph Widget -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="1.5"
+        android:pathData="M108,158 L192,158 L192,186 L108,186 Z"/>
+
+    <!-- Line Graph -->
+    <path
+        android:strokeColor="#66BB6A"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M115,178 L130,170 L145,173 L160,165 L175,168 L185,162"/>
+
+    <!-- WiFi/Signal Icon -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M230,60 C235.523,60 240,64.477 240,70 L240,85 C240,90.523 235.523,95 230,95 L210,95 C204.477,95 200,90.523 200,85 L200,70 C200,64.477 204.477,60 210,60 Z"/>
+
+    <!-- WiFi Waves -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M220,80 C222,78 224,78 226,80 M217,75 C221,71 225,71 229,75"/>
+
+    <!-- WiFi Dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M220,83 C221.657,83 223,84.343 223,86 C223,87.657 221.657,89 220,89 C218.343,89 217,87.657 217,86 C217,84.343 218.343,83 220,83 Z"/>
+
+    <!-- Cloud with Rain (Weather Monitoring) -->
+    <path
+        android:fillColor="#90CAF9"
+        android:pathData="M250,120 C256,120 261,125 261,131 C261,133 270,133 270,138 C270,143 266,147 261,147 L245,147 C240,147 236,143 236,138 C236,135 233,131 238,125 C241,122 245,120 250,120 Z"/>
+
+    <!-- Raindrops -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M245,152 L245,158 M253,152 L253,158 M261,152 L261,158"/>
+
+    <!-- Sensor Node/Tower -->
+    <path
+        android:fillColor="#757575"
+        android:pathData="M50,140 L50,200 L58,200 L58,140 Z M46,138 L62,138 L62,145 L46,145 Z"/>
+
+    <!-- Sensor Antenna -->
+    <path
+        android:strokeColor="#FF5722"
+        android:strokeWidth="2"
+        android:pathData="M54,138 L54,125"/>
+
+    <!-- Antenna Top -->
+    <path
+        android:fillColor="#FF5722"
+        android:pathData="M51,125 L57,125 L54,120 Z"/>
+
+    <!-- Signal Waves from Sensor -->
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M62,155 Q70,155 75,160 M62,165 Q73,165 80,172"/>
+
+    <!-- AI Brain/Circuit Icon -->
+    <path
+        android:fillColor="#9C27B0"
+        android:pathData="M245,180 C250.523,180 255,184.477 255,190 C255,195.523 250.523,200 245,200 L235,200 C229.477,200 225,195.523 225,190 C225,184.477 229.477,180 235,180 Z"/>
+
+    <!-- Circuit Lines -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M235,187 L245,187 M235,193 L245,193 M240,183 L240,197"/>
+
+    <!-- Circuit Nodes -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M235,187 C235.828,187 236.5,187.672 236.5,188.5 C236.5,189.328 235.828,190 235,190 C234.172,190 233.5,189.328 233.5,188.5 C233.5,187.672 234.172,187 235,187 Z M245,193 C245.828,193 246.5,193.672 246.5,194.5 C246.5,195.328 245.828,196 245,196 C244.172,196 243.5,195.328 243.5,194.5 C243.5,193.672 244.172,193 245,193 Z"/>
+
+    <!-- Irrigation Droplets -->
+    <path
+        android:fillColor="#03A9F4"
+        android:pathData="M35,180 Q38,183 38,187 C38,190 36,192 33,192 C30,192 28,190 28,187 Q28,183 31,180 Q33,178 35,180 Z M48,185 Q51,188 51,192 C51,195 49,197 46,197 C43,197 41,195 41,192 Q41,188 44,185 Q46,183 48,185 Z"/>
+
+</vector>

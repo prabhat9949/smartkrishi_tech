@@ -1,0 +1,37 @@
+com.smartkrishi.test.app-jetified-savedstate-1.2.1-0 C:\Users\prabh\.gradle\caches\8.13\transforms\047c524816db89beea53371f08fe31cc\transformed\jetified-savedstate-1.2.1\res
+com.smartkrishi.test.app-jetified-ui-test-junit4-release-1 C:\Users\prabh\.gradle\caches\8.13\transforms\04de55efc0acb46a8932faa784ce4e9e\transformed\jetified-ui-test-junit4-release\res
+com.smartkrishi.test.app-jetified-runtime-saveable-release-2 C:\Users\prabh\.gradle\caches\8.13\transforms\063b4409f97617a728dc4b8a99696060\transformed\jetified-runtime-saveable-release\res
+com.smartkrishi.test.app-jetified-lifecycle-viewmodel-savedstate-2.8.3-3 C:\Users\prabh\.gradle\caches\8.13\transforms\06e15fc758fe41eb140dbd5eef3bc561\transformed\jetified-lifecycle-viewmodel-savedstate-2.8.3\res
+com.smartkrishi.test.app-jetified-graphics-path-1.0.1-4 C:\Users\prabh\.gradle\caches\8.13\transforms\0cb39b087e5e63e6dd06f4610550280b\transformed\jetified-graphics-path-1.0.1\res
+com.smartkrishi.test.app-jetified-activity-1.9.0-5 C:\Users\prabh\.gradle\caches\8.13\transforms\16081d0d32dd68798627e3fcb9115aa7\transformed\jetified-activity-1.9.0\res
+com.smartkrishi.test.app-jetified-activity-compose-1.9.0-6 C:\Users\prabh\.gradle\caches\8.13\transforms\24b8a627d5d6c35ba223649766067f9f\transformed\jetified-activity-compose-1.9.0\res
+com.smartkrishi.test.app-jetified-startup-runtime-1.1.1-7 C:\Users\prabh\.gradle\caches\8.13\transforms\2e6b05ca5202378b281e5a095255e655\transformed\jetified-startup-runtime-1.1.1\res
+com.smartkrishi.test.app-jetified-lifecycle-viewmodel-ktx-2.8.3-8 C:\Users\prabh\.gradle\caches\8.13\transforms\3808e289467047fc365d1bd626403dd5\transformed\jetified-lifecycle-viewmodel-ktx-2.8.3\res
+com.smartkrishi.test.app-jetified-lifecycle-runtime-compose-release-9 C:\Users\prabh\.gradle\caches\8.13\transforms\3c5e74ab283ede7e82d52c3abead2278\transformed\jetified-lifecycle-runtime-compose-release\res
+com.smartkrishi.test.app-jetified-ui-unit-release-10 C:\Users\prabh\.gradle\caches\8.13\transforms\401a30350db191380ced4ac715ee4cee\transformed\jetified-ui-unit-release\res
+com.smartkrishi.test.app-jetified-lifecycle-viewmodel-release-11 C:\Users\prabh\.gradle\caches\8.13\transforms\5272da7ec54bc2ca85e0cdcefd3fba8a\transformed\jetified-lifecycle-viewmodel-release\res
+com.smartkrishi.test.app-jetified-lifecycle-runtime-ktx-release-12 C:\Users\prabh\.gradle\caches\8.13\transforms\55fa360d9e5be119da18462c4f04d3e9\transformed\jetified-lifecycle-runtime-ktx-release\res
+com.smartkrishi.test.app-jetified-activity-ktx-1.9.0-13 C:\Users\prabh\.gradle\caches\8.13\transforms\581c3d46c83aad97b010cdc231dc468b\transformed\jetified-activity-ktx-1.9.0\res
+com.smartkrishi.test.app-core-runtime-2.2.0-14 C:\Users\prabh\.gradle\caches\8.13\transforms\67f512689d523f34f673301b596e9e94\transformed\core-runtime-2.2.0\res
+com.smartkrishi.test.app-jetified-customview-poolingcontainer-1.0.0-15 C:\Users\prabh\.gradle\caches\8.13\transforms\693969b7c44fc5a7adc37d50bb20f59e\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.smartkrishi.test.app-jetified-ui-release-16 C:\Users\prabh\.gradle\caches\8.13\transforms\6b7aa0144c86c7e0f4269278d0e3770a\transformed\jetified-ui-release\res
+com.smartkrishi.test.app-jetified-emoji2-1.3.0-17 C:\Users\prabh\.gradle\caches\8.13\transforms\75d67163fec72abf898ae57197b354a8\transformed\jetified-emoji2-1.3.0\res
+com.smartkrishi.test.app-jetified-core-1.5.0-18 C:\Users\prabh\.gradle\caches\8.13\transforms\76c8026f0d8c96e59ba16b03ad3e6c53\transformed\jetified-core-1.5.0\res
+com.smartkrishi.test.app-jetified-ui-test-release-19 C:\Users\prabh\.gradle\caches\8.13\transforms\86511d77776df38669be961ab87f482e\transformed\jetified-ui-test-release\res
+com.smartkrishi.test.app-jetified-profileinstaller-1.3.1-20 C:\Users\prabh\.gradle\caches\8.13\transforms\889d86af821d38c78c60c6cd846ceda1\transformed\jetified-profileinstaller-1.3.1\res
+com.smartkrishi.test.app-jetified-ui-geometry-release-21 C:\Users\prabh\.gradle\caches\8.13\transforms\8bf6d7509d66cfe1a13c23d32f2d97fd\transformed\jetified-ui-geometry-release\res
+com.smartkrishi.test.app-jetified-lifecycle-process-2.8.3-22 C:\Users\prabh\.gradle\caches\8.13\transforms\8e5f7749d7cd3aafb981947c0f63d19f\transformed\jetified-lifecycle-process-2.8.3\res
+com.smartkrishi.test.app-jetified-core-ktx-1.13.1-23 C:\Users\prabh\.gradle\caches\8.13\transforms\9033968bbf4190ba18f1bcad1f4ddd48\transformed\jetified-core-ktx-1.13.1\res
+com.smartkrishi.test.app-jetified-savedstate-ktx-1.2.1-24 C:\Users\prabh\.gradle\caches\8.13\transforms\92c100011d626fbc68811976405a4488\transformed\jetified-savedstate-ktx-1.2.1\res
+com.smartkrishi.test.app-jetified-ui-graphics-release-25 C:\Users\prabh\.gradle\caches\8.13\transforms\a44ba349077e3fdf44d7b55b2691a3b5\transformed\jetified-ui-graphics-release\res
+com.smartkrishi.test.app-jetified-runtime-release-26 C:\Users\prabh\.gradle\caches\8.13\transforms\ab112bf0a43a46203c1351b5ce4e266d\transformed\jetified-runtime-release\res
+com.smartkrishi.test.app-jetified-ui-util-release-27 C:\Users\prabh\.gradle\caches\8.13\transforms\b4d2b194d9099ac5384fd48757c078d1\transformed\jetified-ui-util-release\res
+com.smartkrishi.test.app-jetified-lifecycle-runtime-release-28 C:\Users\prabh\.gradle\caches\8.13\transforms\b67f90c6b41a7ee7066e680feeb54482\transformed\jetified-lifecycle-runtime-release\res
+com.smartkrishi.test.app-jetified-annotation-experimental-1.4.1-29 C:\Users\prabh\.gradle\caches\8.13\transforms\bc10bf10d04268959865bcff0fab71be\transformed\jetified-annotation-experimental-1.4.1\res
+com.smartkrishi.test.app-core-1.13.1-30 C:\Users\prabh\.gradle\caches\8.13\transforms\c62e9c9fd815f87cdcfc0d976cb3fb85\transformed\core-1.13.1\res
+com.smartkrishi.test.app-lifecycle-livedata-core-2.8.3-31 C:\Users\prabh\.gradle\caches\8.13\transforms\d706079fa98078994549d5a8281c42f5\transformed\lifecycle-livedata-core-2.8.3\res
+com.smartkrishi.test.app-jetified-ui-text-release-32 C:\Users\prabh\.gradle\caches\8.13\transforms\ed6c20e8a572c63a4e67fa9ea06a29d4\transformed\jetified-ui-text-release\res
+com.smartkrishi.test.app-androidTest-33 D:\Smart Krishi\app\build\generated\res\resValues\androidTest\debug
+com.smartkrishi.test.app-mergeDebugAndroidTestResources-34 D:\Smart Krishi\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.smartkrishi.test.app-mergeDebugAndroidTestResources-35 D:\Smart Krishi\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.smartkrishi.test.app-debugAndroidTest-36 D:\Smart Krishi\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
