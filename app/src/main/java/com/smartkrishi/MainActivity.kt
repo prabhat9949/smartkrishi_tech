@@ -8,6 +8,7 @@ import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
+import android.speech.RecognizerIntent
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -26,6 +27,7 @@ import com.google.firebase.database.ValueEventListener
 import com.smartkrishi.presentation.model.Farm
 import com.smartkrishi.presentation.navigation.NavGraph
 import com.smartkrishi.presentation.theme.SmartKrishiTheme
+import com.smartkrishi.voice.VoiceHandler
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -120,7 +122,17 @@ class MainActivity : ComponentActivity() {
             }
         })
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
+        if (requestCode == 101 && resultCode == RESULT_OK) {
+            val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+            val spokenText = result?.get(0) ?: ""
+
+            // ✅ THIS IS CRITICAL
+            VoiceHandler.handle(spokenText)
+        }
+    }
     fun notificationSetting(title: String?, content: String?) {
         val CHANNEL_ID = "New Invitation"
         val CHANNEL_NAME = "New Invitation Notifications"

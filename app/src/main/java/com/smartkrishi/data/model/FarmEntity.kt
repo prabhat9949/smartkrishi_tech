@@ -15,7 +15,7 @@ data class Farm(
     val backgroundRes: Int = R.drawable.farm_placeholder,
     val ownerId: String = "",
     val userEmail: String = "",
-    val status: String = "HEALTHY" ,// ✅ User email for filtering
+    val status: String = "HEALTHY",// ✅ User email for filtering
 
     // ✅ NEW FIELDS
     val imageUrl: String? = null,  // Firebase Storage image URL

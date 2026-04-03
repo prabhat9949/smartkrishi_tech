@@ -2,12 +2,14 @@ package com.smartkrishi.presentation.ai
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Science
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -28,9 +30,7 @@ import kotlinx.coroutines.launch
 private val PrimaryGreen = Color(0xFF2E7D32)
 private val AccentGreenSoft = Color(0xFFC8E6C9)
 private val LightBackground = Color(0xFFF3FBF5)
-private val DarkBackground = Color(0xFF0A1C12)
 private val CardLight = Color(0xFFFFFFFF)
-private val CardDark = Color(0xFF153525)
 
 // ================= DATA MODEL =================
 
@@ -68,10 +68,26 @@ fun FertilizerRecommendationScreen(
         containerColor = LightBackground,
         topBar = {
             TopAppBar(
-                title = { Text("Fertilizer Advisor") },
+                title = {
+                    Text(
+                        text = "Fertilizer Advisor",
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 20.sp
+                    )
+                },
+                navigationIcon = {
+                    IconButton(onClick = { navController.navigateUp() }) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = "Navigate back",
+                            tint = Color.White
+                        )
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = PrimaryGreen,
-                    titleContentColor = Color.White
+                    titleContentColor = Color.White,
+                    navigationIconContentColor = Color.White
                 )
             )
         }
@@ -83,33 +99,47 @@ fun FertilizerRecommendationScreen(
                 .background(LightBackground)
                 .padding(padding)
                 .verticalScroll(rememberScrollState())
-                .padding(16.dp)
+                .padding(horizontal = 16.dp, vertical = 20.dp)
         ) {
 
-            // ===== HEADER SECTION =====
+            // ===== FARM HEADER SECTION =====
 
             Card(
-                shape = RoundedCornerShape(18.dp),
-                colors = CardDefaults.cardColors(containerColor = AccentGreenSoft)
+                shape = RoundedCornerShape(20.dp),
+                colors = CardDefaults.cardColors(containerColor = AccentGreenSoft),
+                elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
             ) {
-                Column(
-                    modifier = Modifier.padding(18.dp)
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(20.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(
-                        text = farmType,
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = PrimaryGreen
+                    Icon(
+                        imageVector = Icons.Default.Science,
+                        contentDescription = null,
+                        tint = PrimaryGreen,
+                        modifier = Modifier.size(32.dp)
                     )
-                    Spacer(modifier = Modifier.height(4.dp))
-                    Text(
-                        text = "Location: $farmLocation",
-                        color = PrimaryGreen.copy(alpha = 0.7f)
-                    )
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Column {
+                        Text(
+                            text = farmType,
+                            fontSize = 22.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = PrimaryGreen
+                        )
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(
+                            text = "Location: $farmLocation",
+                            fontSize = 15.sp,
+                            color = PrimaryGreen.copy(alpha = 0.75f)
+                        )
+                    }
                 }
             }
 
-            Spacer(modifier = Modifier.height(28.dp))
+            Spacer(modifier = Modifier.height(32.dp))
 
             // ===== GENERATE BUTTON =====
 
@@ -121,7 +151,7 @@ fun FertilizerRecommendationScreen(
 
                     scope.launch {
                         try {
-                            val prompt = buildSugarcanePrompt(farmLocation)
+                            val prompt = buildFertilizerPrompt(farmType, farmLocation)
                             resultText = openAI.getRecommendation(prompt)
                         } catch (e: Exception) {
                             error = e.message
@@ -132,111 +162,244 @@ fun FertilizerRecommendationScreen(
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(56.dp),
-                shape = RoundedCornerShape(14.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen)
+                    .height(58.dp),
+                shape = RoundedCornerShape(16.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen),
+                enabled = !isLoading
             ) {
                 if (isLoading) {
-                    CircularProgressIndicator(color = Color.White, strokeWidth = 3.dp)
+                    CircularProgressIndicator(
+                        color = Color.White,
+                        strokeWidth = 3.dp,
+                        modifier = Modifier.size(24.dp)
+                    )
                 } else {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                       // Icon(Icons.Default.Science, contentDescription = null, tint = Color.White)
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text("Generate Fertilizer Plan", color = Color.White)
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(
+                            text = "Generate Personalized Fertilizer Plan",
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = Color.White
+                        )
                     }
                 }
             }
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            error?.let {
-                Text(it, color = MaterialTheme.colorScheme.error)
+            // ===== ERROR DISPLAY =====
+
+            AnimatedVisibility(
+                visible = error != null,
+                enter = fadeIn(),
+                exit = fadeOut()
+            ) {
+                error?.let {
+                    Card(
+                        shape = RoundedCornerShape(12.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.errorContainer
+                        ),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Science, // Reuse for visual consistency
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.error,
+                                modifier = Modifier.size(20.dp)
+                            )
+                            Spacer(modifier = Modifier.width(12.dp))
+                            Text(
+                                text = it,
+                                color = MaterialTheme.colorScheme.onErrorContainer,
+                                fontSize = 15.sp
+                            )
+                        }
+                    }
+                }
             }
+
+            Spacer(modifier = Modifier.height(24.dp))
 
             // ===== RESULTS SECTION =====
 
             AnimatedVisibility(
                 visible = plans.isNotEmpty(),
-                enter = fadeIn()
+                enter = fadeIn(),
+                exit = fadeOut()
             ) {
                 Column {
-
                     Text(
-                        text = "Recommended Plan",
-                        fontSize = 18.sp,
+                        text = "Recommended Fertilizer Plan",
+                        fontSize = 19.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = PrimaryGreen
+                        color = PrimaryGreen,
+                        modifier = Modifier.padding(start = 4.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
 
-                    plans.forEach { plan ->
-                        CompactFertilizerCard(plan)
-                        Spacer(modifier = Modifier.height(14.dp))
+                    Text(
+                        text = "Tailored for  cultivation in $farmLocation ",
+                        fontSize = 13.sp,
+                        color = PrimaryGreen.copy(alpha = 0.6f),
+                        modifier = Modifier.padding(start = 4.dp)
+                    )
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    plans.forEachIndexed { index, plan ->
+                        ProfessionalFertilizerCard(plan = plan, index = index + 1)
+                        if (index < plans.lastIndex) {
+                            Spacer(modifier = Modifier.height(16.dp))
+                        }
                     }
+
+                    Spacer(modifier = Modifier.height(24.dp))
+
+                    // Professional disclaimer
+
                 }
             }
         }
     }
 }
 
-// ================= COMPACT CARD =================
+// ================= PROFESSIONAL FERTILIZER CARD =================
 
 @Composable
-private fun CompactFertilizerCard(plan: FertilizerPlan) {
+private fun ProfessionalFertilizerCard(plan: FertilizerPlan, index: Int) {
 
     Card(
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(containerColor = CardLight),
-        elevation = CardDefaults.cardElevation(4.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(20.dp)
         ) {
+            // Card header with index
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Surface(
+                    shape = RoundedCornerShape(50),
+                    color = PrimaryGreen.copy(alpha = 0.1f),
+                    modifier = Modifier.size(28.dp)
+                ) {
+                    Box(
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = index.toString(),
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = PrimaryGreen
+                        )
+                    }
+                }
 
+                Spacer(modifier = Modifier.width(12.dp))
+
+                Text(
+                    text = plan.name,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 17.sp,
+                    color = PrimaryGreen,
+                    modifier = Modifier.weight(1f)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Quantity and Timing in structured rows
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Quantity",
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 14.sp,
+                    color = Color.DarkGray,
+                    modifier = Modifier.width(100.dp)
+                )
+                Text(
+                    text = plan.quantity,
+                    fontSize = 15.sp,
+                    color = PrimaryGreen,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Timing",
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 14.sp,
+                    color = Color.DarkGray,
+                    modifier = Modifier.width(100.dp)
+                )
+                Text(
+                    text = plan.timing,
+                    fontSize = 15.sp,
+                    color = PrimaryGreen,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Purpose
             Text(
-                text = plan.name,
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                color = PrimaryGreen
+                text = "Purpose",
+                fontWeight = FontWeight.Medium,
+                fontSize = 14.sp,
+                color = Color.DarkGray
             )
-
-            Spacer(modifier = Modifier.height(6.dp))
-
-            Text("Quantity: ${plan.quantity}")
-            Text("Timing: ${plan.timing}")
-
-            Spacer(modifier = Modifier.height(6.dp))
-
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = plan.purpose,
-                fontSize = 13.sp,
-                color = Color.Gray
+                fontSize = 14.sp,
+                color = Color(0xFF424242),
+                lineHeight = 20.sp
             )
         }
     }
 }
 
-// ================= PROMPT =================
+// ================= PROMPT (DYNAMIC) =================
 
-private fun buildSugarcanePrompt(location: String): String {
+private fun buildFertilizerPrompt(cropType: String, location: String): String {
     return """
-You are a professional Indian agronomist.
+You are a professional Indian agronomist specializing in sustainable farming practices.
 
-Provide a concise fertilizer plan for Sugarcane farming in $location.
+Provide a concise fertilizer plan for $cropType farming in $location.
 
-Return EXACTLY in this format:
+Return EXACTLY in this format (provide exactly 3 fertilizers):
 
 Fertilizer:
 Quantity:
 Timing:
 Purpose:
 
-Provide 3 fertilizers only.
-Keep explanation short.
-No stars.
-No bullet points.
-No extra formatting.
+Keep each explanation short and precise.
+No stars, no bullet points, no extra formatting or introductory text.
 """.trimIndent()
 }
 
@@ -250,23 +413,21 @@ private fun parseStructuredPlans(text: String): List<FertilizerPlan> {
     for (block in blocks) {
 
         val name = block.substringBefore("\n").trim()
-        val quantity = Regex("Quantity:(.*)")
-            .find(block)?.groupValues?.get(1)?.trim() ?: ""
 
-        val timing = Regex("Timing:(.*)")
-            .find(block)?.groupValues?.get(1)?.trim() ?: ""
+        val quantity = Regex("Quantity:(.*?)(\n|$)").find(block)?.groupValues?.get(1)?.trim() ?: ""
+        val timing = Regex("Timing:(.*?)(\n|$)").find(block)?.groupValues?.get(1)?.trim() ?: ""
+        val purpose = Regex("Purpose:(.*?)(\n|$)").find(block)?.groupValues?.get(1)?.trim() ?: ""
 
-        val purpose = Regex("Purpose:(.*)")
-            .find(block)?.groupValues?.get(1)?.trim() ?: ""
-
-        plans.add(
-            FertilizerPlan(
-                name = name,
-                quantity = quantity,
-                timing = timing,
-                purpose = purpose
+        if (name.isNotBlank()) {
+            plans.add(
+                FertilizerPlan(
+                    name = name,
+                    quantity = quantity,
+                    timing = timing,
+                    purpose = purpose
+                )
             )
-        )
+        }
     }
 
     return plans

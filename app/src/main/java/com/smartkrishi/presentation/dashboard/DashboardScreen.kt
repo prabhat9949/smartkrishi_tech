@@ -1,5 +1,6 @@
 package com.smartkrishi.presentation.dashboard
 
+import android.app.Activity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
@@ -50,11 +51,14 @@ import com.smartkrishi.ml.CropPrediction
 import com.smartkrishi.ml.CropRecommendationHelper
 import com.smartkrishi.presentation.chat.KrishiMitriChatScreen
 import com.smartkrishi.presentation.chat.KrishiMitriChatViewModel
+import com.smartkrishi.presentation.dashboard.Strings.pumpOn
 import com.smartkrishi.presentation.home.FarmViewModel
 import com.smartkrishi.presentation.model.Farm
 import com.smartkrishi.presentation.model.SensorNode
 import com.smartkrishi.presentation.navigation.Screen
 import com.smartkrishi.presentation.theme.ThemeState
+import com.smartkrishi.voice.VoiceCommandProcessor
+import com.smartkrishi.voice.VoiceManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -67,7 +71,7 @@ import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.roundToInt
-
+import com.smartkrishi.voice.VoiceHandler
 // ═══════════════════════════════════════════════════════════════════
 //  THEME COLORS
 // ═══════════════════════════════════════════════════════════════════
@@ -172,6 +176,7 @@ object Strings {
 // ═══════════════════════════════════════════════════════════════════
 private const val OPEN_WEATHER_API_KEY = "64961347ba9d05d6b1a486037c5142c1"
 
+lateinit var voiceProcessor: VoiceCommandProcessor
 data class HourlyForecast(val time: String, val temp: String, val condition: String, val rainChance: Int)
 data class MlCropRecommendation(val topCrops: List<CropPrediction>, val inputParams: String)
 data class DailyForecast(
@@ -501,6 +506,11 @@ fun SmartIrrigationPanel(
         moisture < 80f -> Color(0xFF2E7D32)
         else           -> Color(0xFF0277BD)
     }
+    val context = LocalContext.current
+    val activity = context as Activity
+
+    val voiceManager = remember { VoiceManager(context) }
+
     val pumpColor = when {
         isPumpUpdating -> Color(0xFFF57C00)
         isPumpOn       -> Color(0xFF2E7D32)
@@ -968,7 +978,65 @@ fun DashboardScreen(
     val rain        by dashboardViewModel.rain.collectAsState()
     val pumpValue   by dashboardViewModel.pump.collectAsState()
     var isPumpOn    by remember { mutableStateOf(false) }
+    val context  = LocalContext.current
+    val activity = context as Activity
 
+    val voiceManager = remember { VoiceManager(context) }
+    LaunchedEffect(pumpValue) {
+        isPumpOn = pumpValue == 1
+    }
+
+// ✅ ADD VOICE PROCESSOR HERE (AFTER isPumpOn exists)
+
+    LaunchedEffect(Unit) {
+        VoiceHandler.processor = VoiceCommandProcessor(
+            navController = navController,
+
+            onPumpToggle = { isOn ->
+                isPumpOn = isOn
+
+                val pumpValue = if (isOn) 1 else 0
+
+                firebaseDatabase.reference
+                    .child("dashboard")
+                    .child("farmer_SK001")
+                    .child("farm_alpha01")
+                    .child("commands")
+                    .child("pump")
+                    .setValue(pumpValue)
+
+                firebaseDatabase.reference
+                    .child("dashboard")
+                    .child("farmer_SK001")
+                    .child("farm_alpha01")
+                    .child("live")
+                    .child("irrigation")
+                    .child("pump")
+                    .setValue(pumpValue)
+            },
+
+            speak = { text ->
+                voiceManager.speak(text)
+            },
+
+            getSensorData = {
+                VoiceCommandProcessor.SensorSnapshot(
+                    moisture = sensorNodes.firstOrNull()?.moisture?.toString() ?: "0",
+                    temperature = sensorNodes.firstOrNull()?.temperature?.toString() ?: "0",
+                    humidity = sensorNodes.firstOrNull()?.humidity?.toString() ?: "0",
+                    ph = sensorNodes.firstOrNull()?.ph?.toString() ?: "0",
+                    ec = sensorNodes.firstOrNull()?.ec?.toString() ?: "0",
+                    n = sensorNodes.firstOrNull()?.n?.toString() ?: "0",
+                    p = sensorNodes.firstOrNull()?.p?.toString() ?: "0",
+                    k = sensorNodes.firstOrNull()?.k?.toString() ?: "0",
+                    tankLevel = tank.toString(),
+                    rainStatus = if (rain == 1) "Rain detected" else "No rain",
+                    pumpStatus = if (isPumpOn) "चालू" else "बंद",
+
+                    )
+            }
+        )
+    }
     LaunchedEffect(pumpValue) { isPumpOn = pumpValue == 1 }
 
     // Weather: show last cached, update silently in background
@@ -1003,7 +1071,7 @@ fun DashboardScreen(
         }
     }
 
-    val context  = LocalContext.current
+
     val mlHelper = remember(context) { CropRecommendationHelper(context) }
     DisposableEffect(Unit) { onDispose { mlHelper.close() } }
 
@@ -1067,7 +1135,29 @@ fun DashboardScreen(
     ) {
         Scaffold(
             containerColor = backgroundColor,
-            floatingActionButton = { if (!showChatPopup) AnimatedChatbotFab { showChatPopup = true } },
+            floatingActionButton = {
+                if (!showChatPopup) {
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+
+                        // 🎤 MIC BUTTON
+                        FloatingActionButton(
+                            onClick = {
+                                voiceManager.startListening(activity)
+                            },
+                            containerColor = PrimaryGreen
+                        ) {
+                            Icon(Icons.Default.Mic, contentDescription = "Voice")
+                        }
+
+                        // 🤖 CHAT BUTTON (existing)
+                        AnimatedChatbotFab {
+                            showChatPopup = true
+                        }
+                    }
+                }
+            },
             topBar = {
                 CenterAlignedTopAppBar(
                     colors = TopAppBarDefaults.centerAlignedTopAppBarColors(

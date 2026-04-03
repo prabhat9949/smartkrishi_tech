@@ -1893,7 +1893,7 @@ fun SystemStatusGrid(
     isPumpOn: Boolean,
     isPumpUpdating: Boolean,
     tds: Int,
-    tank: Int,
+    tank: Double,
     rain: Int,
     onPumpToggleRequest: (Boolean) -> Unit
 )
@@ -1947,7 +1947,7 @@ fun SystemStatusGrid(
                 )
                 SystemTile(
                     title = "Tank level",
-                    subtitle = "$tank%",
+                    subtitle = "${(tank * 100).toInt()}%",
                     status = "Enough water",
                     icon = Icons.Default.Opacity,
                     tint = PrimaryGreen,

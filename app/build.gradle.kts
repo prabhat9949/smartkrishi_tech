@@ -130,6 +130,9 @@ dependencies {
 
     // ===== HILT =====
     implementation("com.google.dagger:hilt-android:2.51")
+    implementation("androidx.navigation:navigation-runtime-android:2.9.7")
+    implementation("com.google.android.gms:play-services-contextmanager:9.4.0")
+    implementation("androidx.compose.foundation:foundation:1.10.6")
     kapt("com.google.dagger:hilt-android-compiler:2.51")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 

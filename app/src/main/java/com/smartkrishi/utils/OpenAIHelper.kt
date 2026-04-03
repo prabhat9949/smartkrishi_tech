@@ -11,7 +11,7 @@ import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import okhttp3.MediaType.Companion.toMediaType
 private const val TAG = "OpenAIHelper"
-private const val OPENAI_API_KEY = "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"
+private const val OPENAI_API_KEY = "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"
 
 object OpenAIHelper {
 
