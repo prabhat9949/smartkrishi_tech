@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xhdpi_current_location_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xhdpi/current_location_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxxhdpi_current_location_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxxhdpi/current_location_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-anydpi-v26_current_location_round.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-anydpi-v26/current_location_round.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-mdpi_current_location.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-mdpi/current_location.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_farm_placeholder.png.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/farm_placeholder.png"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxxhdpi_current_location_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxxhdpi/current_location_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxhdpi_current_location_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxhdpi/current_location_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/raw_app_entry_video_customization.mp4.flat",
+        "source": "com.smartkrishi.app-main-82:/raw/app_entry_video_customization.mp4"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_onboarding1.png.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/onboarding1.png"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-mdpi_current_location_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-mdpi/current_location_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-hdpi_current_location.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-hdpi/current_location.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_onboarding_finance.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/onboarding_finance.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_farm_placeholder2.png.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/farm_placeholder2.png"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-anydpi-v26_current_location.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-anydpi-v26/current_location.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-hdpi_current_location_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-hdpi/current_location_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxxhdpi_current_location.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxxhdpi/current_location.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xhdpi_current_location.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xhdpi/current_location.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_bot.png.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/bot.png"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_onboarding2.png.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/onboarding2.png"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxhdpi_current_location_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxhdpi/current_location_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-mdpi_current_location_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-mdpi/current_location_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_onboarding3.png.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/onboarding3.png"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_onboarding_disease.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/onboarding_disease.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_current_location_background.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/current_location_background.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_onboarding_monitoring.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/onboarding_monitoring.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_ic_leaf.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/ic_leaf.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-hdpi_current_location_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-hdpi/current_location_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxhdpi_current_location.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxhdpi/current_location.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_leaf_pic.png.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/leaf_pic.png"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xhdpi_current_location_foreground.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xhdpi/current_location_foreground.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/xml_network_security_config.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.smartkrishi.app-main-82:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.smartkrishi.app-debug-80:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.smartkrishi.app-main-82:/drawable/ic_launcher_background.xml"
+    }
+]

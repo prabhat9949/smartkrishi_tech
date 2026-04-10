@@ -1,0 +1,76 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="300dp"
+    android:viewportWidth="300"
+    android:viewportHeight="300">
+
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#E8F5E9"
+        android:pathData="M150,30 C177.614,30 205.228,45.858 220,71.716 C234.772,97.574 234.772,130.426 220,156.284 C205.228,182.142 177.614,198 150,198 C122.386,198 94.772,182.142 80,156.284 C65.228,130.426 65.228,97.574 80,71.716 C94.772,45.858 122.386,30 150,30 Z"/>
+
+    <!-- Mobile Phone -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="3"
+        android:pathData="M100,80 L100,220 A10,10 0,0,0 110,230 L190,230 A10,10 0,0,0 200,220 L200,80 A10,10 0,0,0 190,70 L110,70 A10,10 0,0,0 100,80 Z"/>
+
+    <!-- Phone Screen -->
+    <path
+        android:fillColor="#F1F8E9"
+        android:pathData="M110,85 L110,210 L190,210 L190,85 Z"/>
+
+    <!-- Graph Line on Screen -->
+    <path
+        android:strokeColor="#66BB6A"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M120,180 L140,160 L160,170 L180,140"/>
+
+    <!-- Rupee Symbol (₹) -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M220,60 C234.915,60 247,72.085 247,87 C247,101.915 234.915,114 220,114 C205.085,114 193,101.915 193,87 C193,72.085 205.085,60 220,60 Z"/>
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M215,75 L225,75 L225,78 L218,78 C219,82 222,84 226,84 L226,87 L222,87 L222,99 L219,99 L219,87 L215,87 L215,84 L219,84 C217,82 216,80 215,78 L215,75 Z"/>
+
+    <!-- Calculator Icon -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M230,140 L230,180 A8,8 0,0,0 238,188 L262,188 A8,8 0,0,0 270,180 L270,140 A8,8 0,0,0 262,132 L238,132 A8,8 0,0,0 230,140 Z"/>
+
+    <!-- Calculator Display -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M237,143 L263,143 L263,155 L237,155 Z"/>
+
+    <!-- Calculator Buttons -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M240,162 L247,162 L247,169 L240,169 Z M253,162 L260,162 L260,169 L253,169 Z M240,174 L247,174 L247,181 L240,181 Z M253,174 L260,174 L260,181 L253,181 Z"/>
+
+    <!-- Growth Arrow -->
+    <path
+        android:fillColor="#FF5722"
+        android:pathData="M60,150 L50,160 L55,160 L55,180 L65,180 L65,160 L70,160 Z M55,145 L55,152 L65,152 L65,145 Z"/>
+
+    <!-- Coin Stack -->
+    <ellipse
+        android:fillColor="#FFD54F"
+        android:pathData="M45,185 a 12,4 0 1,0 24,0 a 12,4 0 1,0 -24,0"/>
+    <ellipse
+        android:fillColor="#FFC107"
+        android:pathData="M45,188 a 12,4 0 1,0 24,0 a 12,4 0 1,0 -24,0"/>
+    <ellipse
+        android:fillColor="#FFB300"
+        android:pathData="M45,191 a 12,4 0 1,0 24,0 a 12,4 0 1,0 -24,0"/>
+
+    <!-- Bar Chart -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M235,210 L245,210 L245,235 L235,235 Z M250,200 L260,200 L260,235 L250,235 Z M265,215 L275,215 L275,235 L265,235 Z"/>
+
+</vector>

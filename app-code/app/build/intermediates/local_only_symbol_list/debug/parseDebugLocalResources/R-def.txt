@@ -1,0 +1,35 @@
+R_DEF: Internal format may change without notice
+local
+color ic_launcher_background
+drawable bot
+drawable current_location_background
+drawable farm_placeholder
+drawable farm_placeholder2
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_leaf
+drawable leaf_pic
+drawable onboarding1
+drawable onboarding2
+drawable onboarding3
+drawable onboarding_disease
+drawable onboarding_finance
+drawable onboarding_monitoring
+mipmap current_location
+mipmap current_location_foreground
+mipmap current_location_round
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
+raw app_entry_video_customization
+string app_name
+string default_web_client_id
+string firebase_database_url
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string project_id
+style Theme.SmartKrishiTheme
+xml network_security_config
